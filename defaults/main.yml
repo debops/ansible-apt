@@ -50,7 +50,7 @@ apt__update_cache_early: '{{ ansible_local.core.cache_valid_time
 apt__base_packages: [ 'ed', 'python', 'python-apt', 'lsb-release', 'make', 'sudo', 'gnupg-curl',
                      'git', 'wget', 'curl', 'rsync', 'netcat-openbsd', 'bridge-utils', 'vlan',
                      'openssh-server', 'bsdutils', 'python-pycurl', 'python-httplib2',
-                     'apt-transport-https', 'acl', 'python-pip' ]
+                     'apt-transport-https', 'acl', 'python-pip', 'man' ]
 
 
 # .. envvar:: apt__update_notification_packages
