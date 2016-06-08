@@ -95,7 +95,7 @@
          (item.state is undefined or item.state is defined))
 
 - name: Register number of custom APT repo
-  shell: ls -l | egrep '\.list$'|  wc -l
+  shell: ls -l /etc/apt/sources.list.d/ | egrep '\.list$'|  wc -l
   register: apt__register_custom_apt_list_before
   ignore_errors: yes
   
@@ -109,7 +109,7 @@
          (item.state is undefined or item.state is defined))
 
 - name: Register new number of custom APT repo
-  shell: ls -l | egrep '\.list$'|  wc -l
+  shell: ls -l /etc/apt/sources.list.d/ | egrep '\.list$'|  wc -l
   register: apt__register_custom_apt_list_after
   ignore_errors: yes
   
