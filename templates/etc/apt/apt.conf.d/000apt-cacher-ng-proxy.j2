@@ -12,3 +12,11 @@ Acquire::http::Proxy "false";
 Acquire::https::Proxy "{{ apt__proxy_url }}";
 {% endif %}
 {{ 'Acquire::http::Proxy::bugs.debian.org "DIRECT";' if (apt__proxy_bypass_for_bugs_debian_org|d() | bool) else '' }}
+
+{% if apt__proxy_direct_urls is defined %}
+Acquire::http::Proxy {
+{% for direct in apt__proxy_direct_urls %}
+    {{ direct }} DIRECT;
+{% endfor %}
+};
+{% endif %}

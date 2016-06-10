@@ -7,13 +7,13 @@
     owner: 'root'
     group: 'root'
     mode: '0644'
-  when: (apt__enabled|d() | bool) and ((apt__proxy_url is defined and apt__proxy_url is string and apt__proxy_url) or apt__proxy_bypass_for_bugs_debian_org)
+  when: (apt__enabled|d() | bool) and ((apt__proxy_url is defined and apt__proxy_url is string and apt__proxy_url) or apt__proxy_bypass_for_bugs_debian_org or apt__proxy_direct_urls is defined) 
 
 - name: Configure APT to not use a proxy server
   file:
     path: '/etc/apt/apt.conf.d/000apt-cacher-ng-proxy'
     state: 'absent'
-  when: (apt__enabled|d() | bool) and not ((apt__proxy_url is defined and apt__proxy_url is string and apt__proxy_url) or apt__proxy_bypass_for_bugs_debian_org)
+  when: (apt__enabled|d() | bool) and not ((apt__proxy_url is defined and apt__proxy_url is string and apt__proxy_url) or apt__proxy_bypass_for_bugs_debian_org or apt__proxy_direct_urls is defined)
 
 - include: apt.yml
   when: (apt__enabled|d() | bool)
