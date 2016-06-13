@@ -82,6 +82,17 @@ apt__update_notification_packages:
 apt__proxy_url: ''
 
 
+# .. envvar:: apt__proxy_direct_urls
+# 
+# This variable allows you to configure urls which are excluded from your proxy:
+# Acquire::*::Proxy DIRECT
+#
+# Examples::
+#
+# apt__proxy_direct_urls: [ 'http://foo.bar' ]
+apt__proxy_direct_urls: ''
+
+
 # .. envvar:: apt__proxy_bypass_for_bugs_debian_org
 #
 # Bypass the configured proxy server for https://bugs.debian.org.
