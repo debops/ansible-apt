@@ -1,6 +1,15 @@
 Changelog
 =========
 
+v0.2.1
+------
+
+*Unreleased*
+
+- Do the installation of packages after it is ensured that the
+  :file:`/etc/apt/sources.list` file and the repository cache are up-to-date to
+  avoid installing old/unwanted packages. [ypid]
+
 v0.2.0
 ------
 
