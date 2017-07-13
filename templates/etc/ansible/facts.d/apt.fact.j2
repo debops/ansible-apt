@@ -54,14 +54,14 @@ try:
             source = line.split()
             if source[1] not in source_deb and source[1] not in security_sources:
                 for prefix in apt_uri_types:
-                    if source[1].startswith(prefix):
+                    if source[1].startswith(prefix) and source[1].endswith('/'):
                         source_deb.append(source[1])
 
         elif line.startswith('deb-src'):
             source = line.split()
             if source[1] not in source_deb_src and source[1] not in security_sources:
                 for prefix in apt_uri_types:
-                    if source[1].startswith(prefix):
+                    if source[1].startswith(prefix) and source[1].endswith('/'):
                         source_deb_src.append(source[1])
 
     fh.close()
