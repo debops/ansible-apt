@@ -21,6 +21,14 @@ new release.
 
 .. _debops.apt master: https://github.com/debops/ansible-apt/compare/v0.5.0...master
 
+Changed
+~~~~~~~
+
+- Ensure that the security source URLs end with a slash (``/``) character
+  before adding them to the list of security sources. This should help avoid
+  misidentifying them by the Ansible fact script as regular package sources,
+  which results in an error. [drybjed_]
+
 
 `debops.apt v0.5.0`_ - 2017-07-03
 ---------------------------------
